@@ -1,0 +1,26 @@
+
+
+/* Style for home page */
+.album-cover {
+    width: 100%;
+    height: auto;
+}
+.album-card {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: rgb(243, 93, 93);
+    text-align: center;
+}
+
+.input-search-albums {
+    padding: 4px;
+    margin: 10px 0 10px 920px;
+    border-radius: 5px;
+    border: 1px rgb(59, 58, 58) solid;
+    text-align: left;
+}
+.submit-view-data {
+    text-align: center;
+}

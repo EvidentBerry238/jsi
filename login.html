@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="account.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="top-menu">
+            <div>
+                <img src="pictures/Empty.png" alt="">
+            </div>
+            <div class="page">
+                <a href="index.html">Trang chủ</a>
+                <a href="#">Thông tin</a>
+                <a href="#">Giới thiệu</a>
+            </div>
+            <div class="icon">
+                <div class="icon">
+                    <button class="btn2" onclick="contact()"><b>CONTACT</b></button>
+                </div>
+                </div>
+        </div>  
+                    <!-- LOGIN -->
+        <div class="account-box" id="login">
+        <h1>Login</h1>
+        
+    <form>
+        <div class="user-box">
+            <input class="box" id="email_user" type="email" name="" required="" placeholder="  Email">
+        </div>
+        <div class="user-box">
+            <input class="box" id="pw_user" type="password" name="" required="" placeholder="  Password">
+        </div>
+    </form>
+        <div class="selector">
+             <a class="account" href="register.html">Bạn chưa có tài khoản?</a><br>
+             <button id="button-login" class="btn">ĐĂNG NHẬP</button>
+       </div>
+  </div>
+  <script
+    type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+    import { getFirestore , collection, addDoc} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyB2pwoFIhJDgVCiiuxZjzdh2BdEbnwypAQ",
+        authDomain: "test-2ec96.firebaseapp.com",
+        projectId: "test-2ec96",
+        storageBucket: "test-2ec96.appspot.com",
+        messagingSenderId: "133433483637",
+        appId: "1:133433483637:web:c968b4093cd5fba227f33c"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app)
+    const button = document.getElementById('button-login')
+
+    button.addEventListener('click',  (e) => {
+        const pw = document.getElementById("pw_user").value
+        const email = document.getElementById("email_user").value
+        // alert(email)
+        // alert(pw)
+
+        e.preventDefault()
+        alert('check')
+        signInWithEmailAndPassword(auth, email, pw)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        alert("Login sucessfully");
+        console.log("success");
+
+        location.href = './index.html'
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        if (errorMessage == "Firebase: Error (auth/invalid-credential).") alert("Email or password wrong, please try again!");
+    })
+})
+    </script>
+</body>
+</html>
