@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.top-menu {
+    background: dodgerblue;
+    color: white;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 9em;
+    grid-row-gap: 1em;
+    padding: 14px 64px;
+    margin-bottom: 36px;
+}
+
+.top-menu .page {
+    display: flex;
+    justify-content: space-evenly;   
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.top-menu .page a {
+    color: white;
+}
+
+.top-menu .icon {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.top-menu .icon a {
+    text-decoration: none;
+    color: white;
+}
+
+.top-menu .icon i {
+    padding: 0 16px;
+    cursor: pointer;
+    font-size: 19px;
+}
+
+.lines {
+    border-right: 1px solid white;
+    height: 36px;
+}
+
+.info {
+    text-align: center;
+}
+
+.opening {
+    color: #013764;
+    font-size: xx-large;
+    padding: 50px;
+}
+
+.info-img {
+    border-radius: 50px;
+}
+
+.part1 {
+    color: #7e538b;
+    font-size: x-large;
+    padding: 50px;
+}
+
+.part2 {
+    font-size: xx-large;
+
+}
+
+.paragragh {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: centers;
+    /* margin: 40px; */
+    flex-direction: column;
+    padding: 20px;
+
+}
+
+.text-item {
+    margin: auto;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: justify;
+    font-size: larger;
+  }
+
+  .info-img2 {
+    padding: 20px;
+  }
+
+  
+.btn {
+    margin-top: 340px;
+    padding: 10px;
+    height: 40px;
+    background: none;
+  }
+
+  .btn2 {
+    padding: 10px;
+    margin-left: 9%;
+    height: 40px;
+    border: none;
+  }
+  
+.footer {
+    background-color: dodgerblue;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+  }
+  
+.item {
+    padding-top: 100px;
+    text-align: center;
+    font-size: large;
+    color: azure;
+  }
+
+.album-cover {
+    width: 100%;
+    height: auto;
+}
+
+.album-card {
+    margin-bottom: 20px;
+}
+    
+.card {
+    padding: 20px;
+}
+@media only screen and (max-width: 768px) {
+    body {
+        background-color: #110f29;
+    }
+}
